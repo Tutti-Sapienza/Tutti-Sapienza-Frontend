@@ -63,6 +63,15 @@ button:disabled {
   cursor: not-allowed;
 }
 
+/* Wallet Button Styles */
+.wallet-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  margin-top: 20px;
+}
+
 .connect-button {
   background-color: #ffffff;
   color: #4f46e5;
@@ -70,12 +79,32 @@ button:disabled {
   padding: 12px 24px;
 }
 
+.connect-button.metamask {
+  background-color: #f6851b;
+  color: white;
+}
+
+.connect-button.rabby {
+  background-color: #8a46ff;
+  color: white;
+}
+
 .mint-button {
   background-color: #10b981;
+  margin-top: 20px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .mint-button:hover {
   background-color: #059669;
+}
+
+.mint-button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
 }
 
 .disconnect-button {
@@ -162,4 +191,23 @@ section {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+/* App specific styles */
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  max-width: 800px;
 }

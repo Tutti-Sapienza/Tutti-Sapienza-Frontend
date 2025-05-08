@@ -29,10 +29,11 @@ contract TuttiSapienzaNFT is ERC721, ERC721URIStorage, Ownable {
     address public constant DEPLOYED_ADDRESS = 0x5b5bdC053F77127AA067dDCfa9C7eFf38Ca2c31A;
     
     constructor() ERC721("Tutti Sapienza Whitepaper", "TUTTI") {
-        // Set the ENS domain for this contract
-        ensDomain = "tuttisapienza.eth";
+        // Set the ENS domain for this contract with the hyphen
+        ensDomain = "tutti-sapienza.eth";
     }
     
+    // Rest of the contract remains the same...
     function safeMint(address to, string memory uri) public {
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
@@ -53,30 +54,3 @@ contract TuttiSapienzaNFT is ERC721, ERC721URIStorage, Ownable {
     }
     
     // ENS integration functions
-    
-    // Update the ENS registry address if needed
-    function setENSRegistryAddress(address _ensRegistryAddress) public onlyOwner {
-        ensRegistryAddress = _ensRegistryAddress;
-    }
-    
-    // Verify if the message sender owns the ENS domain
-    function verifyENSDomainOwner() public view returns (bool) {
-        // In a production environment, this would query the ENS Registry
-        // For now, we'll assume the contract owner also owns the ENS domain
-        return msg.sender == owner();
-    }
-    
-    // Get the domain associated with this contract
-    function getENSDomain() public view returns (string memory) {
-        return ensDomain;
-    }
-    
-    // Override functions required by ERC721
-    function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
-        super._burn(tokenId);
-    }
-    
-    function tokenURI(uint256 tokenId) public view override(ERC721, ERC721URIStorage) returns (string memory) {
-        return super.tokenURI(tokenId);
-    }
-}

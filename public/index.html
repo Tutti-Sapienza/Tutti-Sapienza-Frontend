@@ -1,4 +1,3 @@
-O
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -329,16 +328,16 @@ O
             .features-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .about-content {
                 flex-direction: column;
             }
-            
+
             .about-text {
                 padding-right: 0;
                 order: 2;
             }
-            
+
             .about-image {
                 order: 1;
                 margin-bottom: 30px;
@@ -349,15 +348,26 @@ O
 <body>
     <div class="container">
         <header>
-            <h1>Tutti Sapienza NFT</h1>
+            <h1>Tutti Sapienza</h1>
             <h2>A Decentralized Education Protocol</h2>
             <p>Tutti Sapienza means "Everyone's Knowledge" in Italian. Our platform integrates blockchain, AI, and immersive technologies to provide equitable, borderless access to global knowledge while preserving each person's cultural and linguistic identity.</p>
         </header>
 
-        <section class="hero-section">
-            <div id="wallet-status">
-                <!-- Wallet connection status will appear here -->
+        <section class="about-section">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>A Revolution in Global Education</h2>
+                    <p>Imagine a child, anywhere in the world, stepping into a solar-powered learning pod—connected by satellite, sustained by clean water, and guided by a personal AI teacher. Through immersive AR/VR experiences, AI-driven lessons, and blockchain-secured credentials, Tutti Sapienza delivers personalized, multilingual education stored on soul-bound NFTs and permanently verified on-chain. Built for equity, powered by innovation—this is education for everyone, everywhere.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/500x350/2575fc/ffffff?text=Education+on+Blockchain" alt="Education on Blockchain">
+                </div>
             </div>
+        </section>
+
+        <section class="hero-section">
+            <div id="wallet-status"></div>
             <div class="wallet-buttons" id="wallet-connect-options">
                 <button class="btn connect-button metamask-button" onclick="connectWallet('MetaMask')">Connect with MetaMask</button>
                 <button class="btn connect-button rabby-button" onclick="connectWallet('Rabby')">Connect with Rabby</button>
@@ -369,7 +379,7 @@ O
                 <div class="feature-card">
                     <div class="feature-icon">🌐</div>
                     <h3>Blockchain Education</h3>
-                    <p>Each child's learn journey and Educational content is secured and verified on the blockchain, providing transparent and immutable records.</p>
+                    <p>Each child's learning journey and Educational content is secured and verified on the blockchain, providing transparent and immutable records.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🧠</div>
@@ -379,22 +389,7 @@ O
                 <div class="feature-card">
                     <div class="feature-icon">🎓</div>
                     <h3>Tutti Sapienza NFT</h3>
-                    <p>Join the Tutti Sapienza DAO community by purchasing an NFT. Participate in governance, get future TUTTI Airdrops</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="about-section">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Decentralized Education for All</h2>
-                    <p>Tutti Sapienza leverages blockchain technology to create an educational ecosystem that's accessible, verifiable, and culturally adaptive.</p>
-                    <p>Our intelligent AI voice agents provide personalized learning experiences, while our NFT-based credentials create a permanent record of educational achievement.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
-                </div>
-                <div class="about-image">
-                    <!-- Replace with your actual image -->
-                    <img src="https://via.placeholder.com/500x350/2575fc/ffffff?text=Education+on+Blockchain" alt="Education on Blockchain">
+                    <p>Join the Tutti Sapienza DAO community by purchasing an NFT. Participate in governance, get future TUTTI Airdrops by being part of the community.</p>
                 </div>
             </div>
         </section>
@@ -402,10 +397,8 @@ O
         <section class="nft-section">
             <h2>Mint Your Educational NFT</h2>
             <p>Join our community by minting the Tutti Sapienza Whitepaper NFT. This dynamic token evolves as you interact with our platform.</p>
-            
             <div class="nft-preview">
                 <div class="nft-image">
-                    <!-- Replace the URL with your actual image URL -->
                     <img src="https://via.placeholder.com/300x300/6a11cb/ffffff?text=Tutti+Sapienza" alt="Tutti Sapienza NFT">
                 </div>
                 <div class="nft-details">
@@ -427,28 +420,20 @@ O
     </div>
 
     <script>
-        // Basic wallet connection functionality
         let account = '';
         let isConnected = false;
         let walletType = '';
 
-        // Check if wallet is already connected
         async function checkIfWalletIsConnected() {
             try {
                 const { ethereum } = window;
-                if (!ethereum) {
-                    console.log("Please install a Web3 wallet");
-                    return;
-                }
+                if (!ethereum) return;
 
                 const accounts = await ethereum.request({ method: 'eth_accounts' });
-                
                 if (accounts.length !== 0) {
                     const account = accounts[0];
-                    console.log("Found an authorized account:", account);
                     setAccount(account);
-                    
-                    // Try to detect which wallet is being used
+
                     if (ethereum.isMetaMask) {
                         setWalletType('MetaMask');
                     } else if (ethereum.isRabby) {
@@ -456,15 +441,12 @@ O
                     } else {
                         setWalletType('Web3 Wallet');
                     }
-                } else {
-                    console.log("No authorized account found");
                 }
             } catch (error) {
                 console.log(error);
             }
         }
 
-        // Connect wallet function
         async function connectWallet(walletName) {
             try {
                 const { ethereum } = window;
@@ -474,8 +456,6 @@ O
                 }
 
                 const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-                
-                console.log(`Connected with ${walletName}:`, accounts[0]);
                 setAccount(accounts[0]);
                 setWalletType(walletName);
             } catch (error) {
@@ -483,42 +463,34 @@ O
             }
         }
 
-        // Set account and update UI
         function setAccount(address) {
             account = address;
             isConnected = true;
             updateUI();
         }
 
-        // Set wallet type
         function setWalletType(type) {
             walletType = type;
             updateUI();
         }
 
-        // Update UI based on connection status
         function updateUI() {
             const walletStatus = document.getElementById('wallet-status');
             const walletOptions = document.getElementById('wallet-connect-options');
             const mintButton = document.getElementById('mint-button');
-            
+
             if (isConnected) {
-                walletStatus.innerHTML = `
-                    <p>Connected with ${walletType}: ${account.substring(0, 6)}...${account.substring(account.length - 4)}</p>
-                `;
+                walletStatus.innerHTML = `<p>Connected with ${walletType}: ${account.substring(0, 6)}...${account.substring(account.length - 4)}</p>`;
                 walletOptions.style.display = 'none';
-                mintButton.disabled = true; // Still coming soon
+                mintButton.disabled = true;
                 mintButton.innerText = "Mint NFT (Coming Soon)";
             } else {
-                walletStatus.innerHTML = `
-                    <p>Connect your wallet to access Tutti Sapienza NFTs</p>
-                `;
+                walletStatus.innerHTML = `<p>Connect your wallet to access Tutti Sapienza NFTs</p>`;
                 walletOptions.style.display = 'flex';
                 mintButton.disabled = true;
             }
         }
 
-        // Initialize on page load
         window.addEventListener('load', () => {
             checkIfWalletIsConnected();
         });

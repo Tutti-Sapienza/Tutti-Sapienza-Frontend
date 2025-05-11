@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './App.css'; // move your styles there if needed
-import './fontawesome.css'; // optional: add fontawesome if using icons
 
 function App() {
   const [account, setAccount] = useState('');

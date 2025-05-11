@@ -4,15 +4,14 @@
   "private": true,
   "dependencies": {
     "@alch/alchemy-web3": "^1.4.7",
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.3.0",
+    "@testing-library/jest-dom": "^5.17.0",  
+    "@testing-library/react": "^13.4.0",     
     "@testing-library/user-event": "^13.5.0",
     "alchemy-sdk": "^3.5.7",
     "ethers": "^5.7.2",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-router-dom": "^7.5.2",
+    "react": "^18.2.0",                     
+    "react-dom": "^18.2.0",                   
+    "react-router-dom": "^6.23.1",           
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -43,6 +42,6 @@
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
-    "tailwindcss": "^4.1.4"
+    "tailwindcss": "^3.4.3" 
   }
 }

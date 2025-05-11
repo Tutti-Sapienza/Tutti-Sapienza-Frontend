@@ -130,9 +130,9 @@ function App() {
 
       <footer>
         <div className="social-links">
-          <a href="#" className="social-link"><i className="fab fa-twitter"></i></a>
-          <a href="#" className="social-link"><i className="fab fa-discord"></i></a>
-          <a href="#" className="social-link"><i className="fab fa-github"></i></a>
+          <a href="https://x.com/tuttisapienza" target="_blank" rel="noopener noreferrer">Twitter</a>
+          <a href="https://discord.gg/yourdiscordlink" target="_blank" rel="noopener noreferrer">Discord</a>
+          <a href="https://github.com/tuttisapienza" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
         <p className="copyright">© 2025 Tutti Sapienza DAO. Powered by Blockchain.</p>
       </footer>

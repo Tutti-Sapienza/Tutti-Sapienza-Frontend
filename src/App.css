@@ -1,213 +1,38 @@
-/* Base Styles */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: #1a1a2e;
-  color: #ffffff;
+.features-section {
+  padding: 60px 20px;
+  background-color: #0f0f1f;
+  border-radius: 16px;
+  margin: 40px auto;
 }
 
-.landing-page {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Header Styles */
-header {
-  text-align: center;
-  padding: 60px 0;
-}
-
-h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-  background: linear-gradient(to right, #6a11cb, #2575fc);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-h2 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  color: #e2e2e2;
-}
-
-p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  color: #cccccc;
-}
-
-/* Button Styles */
-button {
-  background-color: #4f46e5;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  margin: 5px;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  background-color: #4338ca;
-  transform: translateY(-2px);
-}
-
-button:disabled {
-  background-color: #9ca3af;
-  cursor: not-allowed;
-}
-
-/* Wallet Button Styles */
-.wallet-buttons {
+.features-grid {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
-  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-.connect-button {
-  background-color: #ffffff;
-  color: #4f46e5;
-  font-weight: bold;
-  padding: 12px 24px;
-}
-
-.connect-button.metamask {
-  background-color: #f6851b;
-  color: white;
-}
-
-.connect-button.rabby {
-  background-color: #8a46ff;
-  color: white;
-}
-
-.mint-button {
-  background-color: #10b981;
-  margin-top: 20px;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.mint-button:hover {
-  background-color: #059669;
-}
-
-.mint-button:disabled {
-  background-color: #9ca3af;
-  cursor: not-allowed;
-}
-
-.disconnect-button {
-  background-color: #ef4444;
-}
-
-.disconnect-button:hover {
-  background-color: #dc2626;
-}
-
-/* Section Styles */
-section {
-  padding: 40px 0;
-  border-top: 1px solid #2a2a4a;
-}
-
-.vision-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-
-@media (min-width: 768px) {
-  .vision-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.vision-item {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 8px;
+.feature-card {
+  background-color: #1e1e2f;
+  border-radius: 16px;
+  padding: 2rem;
+  flex: 1 1 300px;
+  max-width: 320px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  text-align: center;
   transition: transform 0.3s ease;
 }
 
-.vision-item:hover {
+.feature-card:hover {
   transform: translateY(-5px);
 }
 
-.vision-item h3 {
-  color: #93c5fd;
-  margin-top: 0;
-}
-
-/* Social Button Styles */
-.social-buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.discord-button {
-  background-color: #5865f2;
-}
-
-.github-button {
-  background-color: #333333;
-}
-
-.twitter-button {
-  background-color: #1DA1F2;
-}
-
-/* Error message */
-.error-message {
-  color: #ef4444;
-  margin-top: 10px;
-}
-
-/* Connect Section */
-.connect-section {
-  margin-top: 30px;
-}
-
-.account-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.account-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* App specific styles */
-.App {
-  text-align: center;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.App-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-  max-width: 800px;
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background-color: #2e2e50;
+  padding: 1rem;
+  border-radius: 50%;
+  display: inline-block;
 }

@@ -4,7 +4,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: #1a1a2e;
   color: #ffffff;
-  font-size: 20px; /* Increased font size */
+  font-size: 18px;
 }
 
 .container {
@@ -21,160 +21,164 @@ header {
 
 h1 {
   font-size: 3rem;
-  color: #00c9a7;
+  margin-bottom: 0.5rem;
 }
 
 h2 {
-  font-size: 1.5rem;
-  color: #eee;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
 p {
+  font-size: 1.1rem;
   line-height: 1.6;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
-/* Hero Section */
-.hero-section {
+/* Wallet Section */
+#wallet-status {
   text-align: center;
-  padding: 30px 0;
+  margin: 20px 0;
 }
 
-.wallet-buttons button {
-  margin: 10px;
-  padding: 12px 24px;
+.wallet-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.connect-button {
+  padding: 12px 20px;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
+  background-color: #6a11cb;
+  color: white;
+  border-radius: 5px;
   cursor: pointer;
-}
-
-.metamask-button {
-  background-color: #f6851b;
-  color: white;
-}
-
-.rabby-button {
-  background-color: #3b3b98;
-  color: white;
+  font-size: 1rem;
 }
 
 /* Features Section */
 .features-section {
-  padding: 40px 0;
+  padding: 60px 0;
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-  justify-content: center;
-  margin-top: 20px;
 }
 
 .feature-card {
-  background: #16213e;
-  border-radius: 16px;
+  background-color: #2d2d44;
+  border-radius: 10px;
   padding: 30px;
   text-align: center;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
 .feature-icon {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 15px;
 }
 
 .feature-card h3 {
-  color: #00c9a7;
+  font-size: 1.5rem;
   margin-bottom: 10px;
-  font-size: 1.3rem;
 }
 
 .feature-card p {
-  font-size: 1rem;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
-.feature-card .btn {
-  margin-top: 15px;
+.learn-more-button {
+  margin-top: 20px;
   padding: 12px 24px;
-  font-size: 1rem;
-  background-color: #00c9a7;
-  color: #1a1a2e;
+  font-size: 16px;
+  background-color: #6a11cb;
+  color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.feature-card .btn:hover {
-  background-color: #00b297;
 }
 
 /* NFT Section */
 .nft-section {
-  padding: 40px 0;
   text-align: center;
+  padding: 60px 0;
 }
 
 .nft-preview {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
 }
 
 .nft-image img {
-  border-radius: 16px;
+  border-radius: 10px;
   width: 300px;
   height: 300px;
   object-fit: cover;
 }
 
 .nft-details {
-  margin: 20px 0;
+  max-width: 300px;
+}
+
+.nft-details h4 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.nft-details p {
+  font-size: 16px;
 }
 
 .mint-button {
+  margin-top: 20px;
   padding: 12px 24px;
-  background-color: #00c9a7;
-  color: #1a1a2e;
+  background-color: #6a11cb;
+  color: white;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
+  border-radius: 6px;
   font-size: 1rem;
-}
-
-.mint-button:disabled {
-  background-color: #555;
   cursor: not-allowed;
 }
 
 /* Footer */
 footer {
-  padding: 30px 0;
   text-align: center;
-  border-top: 1px solid #333;
+  padding: 40px 0;
   margin-top: 60px;
+  border-top: 1px solid #444;
 }
 
 .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
   margin-bottom: 10px;
 }
 
-.social-links a {
-  margin: 0 10px;
-  color: #00c9a7;
-  font-size: 1.2rem;
+.social-link {
+  color: white;
   text-decoration: none;
+  font-size: 1.5rem;
 }
 
-.social-links a:hover {
-  color: #00b297;
+@media (max-width: 768px) {
+  .wallet-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nft-preview {
+    flex-direction: column;
+  }
 }

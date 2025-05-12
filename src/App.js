@@ -66,8 +66,6 @@ function App() {
           <p>
             Imagine a child, anywhere in the world, stepping into a solar-powered learning pod—connected by satellite, sustained by clean water, and guided by a personal AI teacher. Through immersive AR/VR experiences, AI-driven lessons, and blockchain-secured credentials, Tutti Sapienza delivers personalized, multilingual education stored on soul-bound NFTs and permanently verified on-chain. Built for equity, powered by innovation—this is education for everyone, everywhere.
           </p>
-          <button className="btn learn-more">Learn More</button>
-        </div>
         <div className="hero-image">
           <img src="https://via.placeholder.com/400x300/6a11cb/ffffff?text=Education+on+Blockchain" alt="Education on Blockchain" />
         </div>

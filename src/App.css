@@ -1,10 +1,10 @@
 /* Base Styles */
 body {
   margin: 0;
-  font-size: 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: #1a1a2e;
   color: #ffffff;
+  font-size: 18px; /* Increased font size */
 }
 
 .container {
@@ -19,36 +19,35 @@ header {
   padding: 60px 0 30px;
 }
 
-header h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
-  color: #fff;
+h1 {
+  font-size: 3rem;
+  color: #00c9a7;
 }
 
-header h2 {
-  font-size: 1.5em;
-  margin-bottom: 20px;
-  color: #a0aec0;
+h2 {
+  font-size: 1.5rem;
+  color: #eee;
+  text-align: center;
+}
+
+p {
+  line-height: 1.6;
+  text-align: center;
 }
 
 /* Hero Section */
 .hero-section {
   text-align: center;
-  margin-bottom: 50px;
+  padding: 30px 0;
 }
 
-.wallet-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-.connect-button {
+.wallet-buttons button {
+  margin: 10px;
   padding: 12px 24px;
   border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  border-radius: 8px;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .metamask-button {
@@ -57,30 +56,30 @@ header h2 {
 }
 
 .rabby-button {
-  background-color: #0052ff;
+  background-color: #3b3b98;
   color: white;
 }
 
 /* Features Section */
 .features-section {
-  margin: 40px 0;
-  text-align: center;
+  padding: 40px 0;
 }
 
 .features-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .feature-card {
-  background-color: #16213e;
-  border-radius: 12px;
+  background: #16213e;
+  border-radius: 16px;
   padding: 30px;
-  width: 300px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-  transition: transform 0.2s;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
 }
 
 .feature-card:hover {
@@ -92,9 +91,35 @@ header h2 {
   margin-bottom: 15px;
 }
 
+.feature-card h3 {
+  color: #00c9a7;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.feature-card p {
+  font-size: 1rem;
+}
+
+.feature-card .btn {
+  margin-top: 15px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #00c9a7;
+  color: #1a1a2e;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.feature-card .btn:hover {
+  background-color: #00b297;
+}
+
 /* NFT Section */
 .nft-section {
-  margin: 50px 0;
+  padding: 40px 0;
   text-align: center;
 }
 
@@ -102,51 +127,54 @@ header h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .nft-image img {
+  border-radius: 16px;
   width: 300px;
-  height: auto;
-  border-radius: 12px;
-  border: 2px solid #fff;
+  height: 300px;
+  object-fit: cover;
+}
+
+.nft-details {
+  margin: 20px 0;
 }
 
 .mint-button {
-  margin-top: 20px;
   padding: 12px 24px;
-  background-color: #4caf50;
-  color: white;
+  background-color: #00c9a7;
+  color: #1a1a2e;
   border: none;
-  border-radius: 6px;
-  cursor: not-allowed;
+  border-radius: 8px;
+  cursor: pointer;
   font-size: 1rem;
+}
+
+.mint-button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
 }
 
 /* Footer */
 footer {
-  margin-top: 60px;
   padding: 30px 0;
   text-align: center;
   border-top: 1px solid #333;
+  margin-top: 60px;
 }
 
 .social-links {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .social-links a {
   margin: 0 10px;
-  color: #ffffff;
+  color: #00c9a7;
+  font-size: 1.2rem;
   text-decoration: none;
-  font-size: 1.2em;
 }
 
 .social-links a:hover {
-  color: #a29bfe;
-}
-
-footer p {
-  font-size: 0.9em;
-  color: #888;
+  color: #00b297;
 }

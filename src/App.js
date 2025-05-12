@@ -53,86 +53,108 @@ function App() {
   const features = [
     {
       title: 'Tutti Sapienza DAO',
-      desc: 'A decentralized organization where community members govern and shape the future of the Tutti platform through NFT ownership and voting rights.'
+      description: 'A decentralized organization governing the protocol. NFT holders vote on proposals to shape the educational future.',
     },
     {
       title: 'DAO Treasury',
-      desc: 'Funds collected from NFT sales and protocol usage are transparently held in the treasury for grants, development, and community rewards.'
+      description: 'Funds raised from NFTs go to a transparent, on-chain treasury used to reward educators and fund learning pods.',
     },
     {
       title: 'NFT Collections',
-      desc: 'Dynamic NFTs that store learning credentials, evolve with progress, and verify educational achievements on-chain.'
+      description: 'Soul-bound NFTs document your learning progress and credentials across the Tutti ecosystem.',
     },
     {
       title: 'Tutti Token',
-      desc: 'The utility and governance token that fuels the ecosystem—used for transactions, voting, and rewarding educational contributions.'
+      description: 'The utility and governance token of the protocol, used for voting, staking, and accessing premium content.',
     },
     {
       title: 'Tutti Vaults',
-      desc: 'On-chain vaults that manage token economics, distribute funding, and power educational incentives based on community participation.'
+      description: 'Smart contract vaults that manage curriculum funds, community grants, and scholarship allocations.',
     },
     {
       title: 'Indigenous Language Datasets',
-      desc: 'Preserving and promoting underrepresented languages by building datasets and AI tools tailored to native linguistic communities.'
+      description: 'AI models trained on native languages to preserve and teach endangered dialects across the world.',
     },
     {
       title: 'Reusable Learning Objects',
-      desc: 'Modular educational units—videos, games, quizzes—created by teachers and rewarded via smart contracts when reused or rated highly.'
+      description: 'Modular lessons designed by educators, rated by the DAO, and stored immutably on-chain.',
     },
     {
       title: 'MMLLMs and Adaptive Learning',
-      desc: 'Multimodal language models personalize content delivery based on student pace, behavior, and engagement to improve outcomes.'
+      description: 'Multimodal language models personalize content delivery through voice, video, and text formats.',
     },
     {
       title: 'AR/VR Headsets',
-      desc: 'Immersive experiences delivered through headsets for remote learners to engage with hands-on simulations and cultural environments.'
-    }
+      description: 'Immersive learning environments with real-time feedback via AI tutors inside 3D virtual classrooms.',
+    },
   ];
 
   return (
     <div className="container">
       <header>
         <h1>Tutti Sapienza</h1>
-        <h2 className="tagline">A Revolution in Education using blockchain technology and Artificial Intelligence</h2>
+        <h2>A Revolution in Education using blockchain technology and Artificial Intelligence</h2>
         <p>
           Tutti Sapienza means "Everyone's Knowledge" in Italian. Our platform integrates blockchain, AI, and immersive technologies to provide equitable, borderless access to global knowledge while preserving each person's cultural and linguistic identity.
+          <br /><br />
+          Imagine a child, anywhere in the world, stepping into a solar-powered learning pod—connected by satellite, sustained by clean water, and guided by a personal AI teacher. Through immersive AR/VR experiences, AI-driven lessons, and blockchain-secured credentials, Tutti Sapienza delivers personalized, multilingual education stored on soul-bound NFTs and permanently verified on-chain. Built for equity, powered by innovation—this is education for everyone, everywhere.
         </p>
       </header>
 
-      <section className="wallet-status">
-        {isConnected ? (
-          <p>
-            Connected with {walletType}: {account.substring(0, 6)}...{account.substring(account.length - 4)}
-          </p>
-        ) : (
-          <>
+      <section className="hero-section">
+        <div id="wallet-status">
+          {isConnected ? (
+            <p>
+              Connected with {walletType}: {account.substring(0, 6)}...{account.substring(account.length - 4)}
+            </p>
+          ) : (
             <p>Connect your wallet to access Tutti Sapienza NFTs</p>
-            <button onClick={() => connectWallet('MetaMask')}>Connect MetaMask</button>
-            <button onClick={() => connectWallet('Rabby')}>Connect Rabby</button>
-          </>
+          )}
+        </div>
+        {!isConnected && (
+          <div className="wallet-buttons" id="wallet-connect-options">
+            <button className="btn connect-button" onClick={() => connectWallet('MetaMask')}>Connect with MetaMask</button>
+            <button className="btn connect-button" onClick={() => connectWallet('Rabby')}>Connect with Rabby</button>
+          </div>
         )}
       </section>
 
       <section className="features-section">
-        <h2>Explore the Ecosystem</h2>
         <div className="features-grid">
           {features.map((feature, index) => (
-            <div key={index} className="feature-card">
+            <div className="feature-card" key={index}>
               <h3>{feature.title}</h3>
-              <p>{feature.desc}</p>
-              <button className="learn-more">Learn More</button>
+              <p>{feature.description}</p>
+              <button className="learn-more-btn">Learn More</button>
             </div>
           ))}
         </div>
       </section>
 
+      <section className="nft-section">
+        <h2>Mint Your Educational NFT</h2>
+        <p>Join our community by minting the Tutti Sapienza Whitepaper NFT. This dynamic token evolves as you interact with our platform.</p>
+        <div className="nft-preview">
+          <div className="nft-image">
+            <img src="https://via.placeholder.com/300x300/6a11cb/ffffff?text=Tutti+Sapienza" alt="Tutti Sapienza NFT" />
+          </div>
+          <div className="nft-details">
+            <h4>Whitepaper NFT</h4>
+            <p>Your gateway to the Tutti Sapienza ecosystem</p>
+          </div>
+          <button className="btn mint-button" disabled>Mint NFT (Coming Soon)</button>
+        </div>
+      </section>
+
       <footer>
         <div className="social-links">
-          <a href="https://x.com/tuttisapienza" target="_blank" rel="noopener noreferrer">Twitter</a>
-          <a href="https://discord.gg/tuttisapienza" target="_blank" rel="noopener noreferrer">Discord</a>
+          <a href="https://twitter.com/tuttisapienza" target="_blank" rel="noopener noreferrer">Twitter</a>
+          <a href="https://discord.gg/yourdiscordlink" target="_blank" rel="noopener noreferrer">Discord</a>
           <a href="https://github.com/tuttisapienza" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
-        <p>© 2025 Tutti Sapienza DAO. Powered by Blockchain.</p>
+        <p className="copyright">
+          © 2025 Tutti Sapienza DAO. Powered by Blockchain.
+        </p>
       </footer>
     </div>
   );

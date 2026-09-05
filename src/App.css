@@ -48,6 +48,7 @@ p {
   justify-content: center;
   gap: 20px;
   margin-bottom: 40px;
+  flex-wrap: wrap;
 }
 
 .connect-button {
@@ -67,7 +68,7 @@ p {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 30px;
 }
 
@@ -122,9 +123,8 @@ p {
 
 .nft-image img {
   border-radius: 10px;
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
+  width: min(100%, 360px);
+  height: auto;
 }
 
 .nft-details {
@@ -164,7 +164,60 @@ footer {
   justify-content: center;
   gap: 20px;
   margin-bottom: 10px;
+  flex-wrap: wrap;
 }
+
+* { box-sizing: border-box; }
+
+a { color: #d4b4ff; }
+
+button, summary, a { touch-action: manipulation; }
+
+button:focus-visible, summary:focus-visible, a:focus-visible {
+  outline: 3px solid #bcecff;
+  outline-offset: 5px;
+}
+
+button:disabled { opacity: 0.65; cursor: not-allowed; }
+
+.hero-section { text-align: center; }
+
+.disconnect-button, .feature-details summary {
+  background: #6a11cb;
+  color: white;
+  border: 1px solid #a173dc;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.wallet-help { max-width: 660px; margin: 20px auto; }
+
+.wallet-error { color: #ffcbcf; }
+
+.network-label { display: block; font-size: 1rem; color: #d3ccdf; }
+
+.feature-details { margin-top: 24px; }
+
+.feature-details summary { font-size: 1rem; }
+
+.feature-details[open] summary { margin-bottom: 20px; }
+
+.feature-details p { text-align: left; overflow-wrap: anywhere; }
+
+.community-pending { font-size: 1rem; color: #c7c0d1; }
+
+.skip-link {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 12px;
+  background: #2d2d44;
+  transform: translateY(-180%);
+}
+
+.skip-link:focus { transform: translateY(0); }
 
 .social-link {
   color: white;

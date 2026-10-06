@@ -13,7 +13,39 @@ body {
   padding: 0 20px;
 }
 
+html { scroll-behavior: smooth; }
+* { box-sizing: border-box; }
+a { color: #dac9ff; }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 3px solid #c5a1ff;
+  outline-offset: 5px;
+}
+.skip-link { position: absolute; top: -60px; padding: 10px; background: #2d2d44; }
+.skip-link:focus { top: 10px; }
+.page-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; padding: 26px 0 0; }
+.page-nav a { text-underline-offset: 5px; }
+.status-badge { display: inline-block; padding: 7px 14px; border: 1px solid #9d79d1; border-radius: 20px; font-size: 14px; color: #e6d7ff; }
+.mission-section { max-width: 920px; margin: 0 auto; padding: 10px 0 20px; }
+.mission-section h2 { font-size: clamp(1.8rem, 4.3vw, 2.75rem); line-height: 1.2; }
+.mission-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 22px; margin: 26px 0; }
+.primary-link { padding: 13px 20px; background: #6a11cb; color: #fff; border-radius: 6px; text-decoration: none; }
+.text-link { text-underline-offset: 5px; }
+.development-note { color: #c5bfd4; font-size: 15px; }
+.role-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px; }
+.role-grid article { background: #2d2d44; border-radius: 10px; padding: 22px; }
+.community-wallet, .protocol-note, .whitepaper-section { padding: 36px 0; max-width: 950px; margin: 0 auto; }
+.whitepaper-section { border-top: 1px solid #444; }
+.image-caption { color: #c5bfd4; max-width: 300px; font-size: 13px; }
+.mint-button:disabled { opacity: 0.7; cursor: not-allowed; }
+.feature-card details { text-align: left; margin-top: 22px; }
+.feature-card summary { color: #dac9ff; font-size: 15px; cursor: pointer; line-height: 1.4; }
+.feature-card details p { text-align: left; color: #e3dfe9; margin: 18px 0 0; }
+
 /* Header Styles */
+h1, h2, h3 {
+  overflow-wrap: anywhere;
+}
+
 header {
   text-align: center;
   padding: 60px 0 30px;
@@ -173,6 +205,8 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .role-grid { grid-template-columns: 1fr; }
+  .page-nav { gap: 16px; font-size: 15px; }
   .wallet-buttons {
     flex-direction: column;
     align-items: center;
@@ -181,4 +215,8 @@ footer {
   .nft-preview {
     flex-direction: column;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
